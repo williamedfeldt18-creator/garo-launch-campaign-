@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GARO Ares – Key Benefits & Scalability</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bess-bg: #1a1a1a;
+      --bess-text: #ffffff;
+      --bess-accent: #E30613;
+      --bess-accent-hover: #b8050f;
+      --bess-card-bg: rgba(255, 255, 255, 0.04);
+      --bess-radius: 12px;
+      --bess-space: 1.5rem;
+      --bess-space-lg: 2rem;
+    }
+
+    .bess-interactive {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      background: var(--bess-bg);
+      color: var(--bess-text);
+      padding: var(--bess-space-lg) 1rem 6rem;
+      min-height: 100vh;
+    }
+
+    .bess-interactive .bess-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .bess-interactive .bess-section-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin: 0 0 var(--bess-space-lg);
+      color: var(--bess-text);
+    }
+
+    /* Benefits grid */
+    .bess-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--bess-space);
+      margin-bottom: var(--bess-space-lg);
+    }
+
+    .bess-benefit-card {
+      background: var(--bess-card-bg);
+      border-radius: var(--bess-radius);
+      padding: var(--bess-space);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .bess-benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .bess-benefit-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bess-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .bess-benefit-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .bess-benefit-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .bess-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      background: var(--bess-accent);
+      color: #fff;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .bess-benefit-card h3 {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      color: var(--bess-accent);
+    }
+
+    .bess-benefit-card p {
+      font-size: 0.9375rem;
+      line-height: 1.5;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* Slider section */
+    .bess-slider-section {
+      margin-top: var(--bess-space-lg);
+      padding: var(--bess-space-lg) 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .bess-slider-section .bess-section-title {
+      margin-bottom: var(--bess-space);
+    }
+
+    .bess-slider-output {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bess-accent);
+      margin-bottom: 1rem;
+    }
+
+    .bess-slider-output span {
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .bess-slider-wrap {
+      max-width: 400px;
+    }
+
+    .bess-slider-wrap input[type="range"] {
+      width: 100%;
+      height: 8px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .bess-slider-wrap input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      background: var(--bess-accent);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .bess-slider-wrap input[type="range"]::-webkit-slider-thumb:hover {
+      background: var(--bess-accent-hover);
+    }
+
+    .bess-slider-wrap input[type="range"]::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      background: var(--bess-accent);
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+
+    .bess-slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Floating CTA */
+    .bess-cta-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1.5rem;
+      background: var(--bess-accent);
+      color: #fff;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(227, 6, 19, 0.4);
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .bess-cta-float:hover {
+      background: var(--bess-accent-hover);
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(227, 6, 19, 0.5);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .bess-benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bess-cta-float {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bess-interactive">
+    <div class="bess-inner">
+      <h2 class="bess-section-title">Key benefits / What you get</h2>
+      <div class="bess-benefits-grid">
+        <div class="bess-benefit-card">
+          <div class="bess-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="20" height="32" rx="2"/><path d="M20 14v4M28 14v4M20 22h8M20 28h8"/></svg>
+          </div>
+          <div class="bess-benefit-badges"><span class="bess-badge">95% DoD</span></div>
+          <h3>Store energy</h3>
+          <p>Use stored power when rates are high or when the sun isn’t shining. Up to 95% depth of discharge for more usable capacity.</p>
+        </div>
+        <div class="bess-benefit-card">
+          <div class="bess-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="14" width="36" height="20" rx="1"/><path d="M14 14V8h8v6M26 34v6h-8v-6M12 24H6M42 24h-6"/></svg>
+          </div>
+          <h3>More from your solar</h3>
+          <p>Increase self-consumption by storing surplus solar energy and using it when you need it.</p>
+        </div>
+        <div class="bess-benefit-card">
+          <div class="bess-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v32M24 8l-8 10h6v8h4v-8h6L24 8z"/><path d="M14 28H8v12h6M40 28h6v12h-6"/></svg>
+          </div>
+          <h3>Reliable backup</h3>
+          <p>Backup output keeps essential loads running during grid outages, with switching in under 10 ms.</p>
+        </div>
+        <div class="bess-benefit-card">
+          <div class="bess-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="12" width="32" height="24" rx="2"/><path d="M16 20h16M16 28h16"/></svg>
+          </div>
+          <h3>Indoor or outdoor (IP65)</h3>
+          <p>Designed for indoor or outdoor installation with IP65 protection and high safety standards.</p>
+        </div>
+        <div class="bess-benefit-card">
+          <div class="bess-benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4l6 12 12 2-9 8 3 12-12-6-12 6 3-12-9-8 12-2 6-12z"/></svg>
+          </div>
+          <div class="bess-benefit-badges"><span class="bess-badge">5+5 years</span></div>
+          <h3>10-year warranty</h3>
+          <p>Five years included, five years extendable—so you’re covered for the long term.</p>
+        </div>
+      </div>
+
+      <section class="bess-slider-section" aria-label="Scalability">
+        <h2 class="bess-section-title">Scale your system</h2>
+        <p class="bess-slider-output" id="bess-slider-output"><strong id="bess-packs">1</strong> Battery Pack<span id="bess-packs-plural">s</span> → <strong id="bess-kwh">4.86</strong> <span>kWh usable</span></p>
+        <div class="bess-slider-wrap">
+          <input type="range" id="bess-slider" min="1" max="6" value="1" aria-label="Number of battery packs" />
+          <div class="bess-slider-labels"><span>1 pack</span><span>6 packs</span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <a href="https://www.garoelectric.com/contact-us" class="bess-cta-float" target="_blank" rel="noopener">Contact an Installer</a>
+
+  <script>
+    (function () {
+      var kWhByPack = [0, 4.86, 9.72, 14.59, 19.45, 24.32, 29.18];
+      var slider = document.getElementById('bess-slider');
+      var outputPacks = document.getElementById('bess-packs');
+      var outputPlural = document.getElementById('bess-packs-plural');
+      var outputKwh = document.getElementById('bess-kwh');
+
+      function update() {
+        var packs = parseInt(slider.value, 10);
+        var kwh = kWhByPack[packs];
+        outputPacks.textContent = packs;
+        outputPlural.textContent = packs === 1 ? '' : 's';
+        outputKwh.textContent = kwh.toFixed(2);
+      }
+
+      if (slider) {
+        slider.addEventListener('input', update);
+        update();
+      }
+    })();
+  </script>
+</body>
+</html>
